@@ -17,7 +17,7 @@ const login = async (req, res) => {
   console.log(founded);
 
   if (founded.length != 0) {
-    res.sendFile();
+    res.sendFile("/client/views/myaccount.html");
   } else {
     res.write("credenziali sbagliate");
     console.log("no");

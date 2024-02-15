@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const authRouter = require("./server/routes/authRoutes");
 
 const app = express();
 const port = 3000;
@@ -12,7 +11,14 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/client/views/index.html");
 });
 
-app.use("/auth", authRouter);
+const login = require("./server/controllers/auth/authLoginController");
+
+app.get("/login", (req, res) => {
+    res.sendFile(__dirname + "/client/views/login.html");
+  });
+
+app.post("/login",login);
+
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
