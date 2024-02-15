@@ -1,6 +1,5 @@
-const { Request, Response } = require("express");
 const Prisma = require("../../connection/connection");
-const jwt = require("jsonwebtoken");
+//const jwt = require("jsonwebtoken");
 
 const login = async (req, res) => {
   const { username, password } = req.body;
