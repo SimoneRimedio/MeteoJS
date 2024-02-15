@@ -17,12 +17,10 @@ const login = async (req, res) => {
 
   console.log(user);
 
-  if (user) {
-    res.writeHead(200);
-    res.end("login eseguito");
+  if (user.length != 0) {
+    res.send("login eseguito")
   } else {
-    res.end("credenziali sbagliate");
-    console.log("no");
+    res.send("credenziali sbagliate");
   }
 };
 
