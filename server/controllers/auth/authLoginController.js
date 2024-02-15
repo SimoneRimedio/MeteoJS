@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 
 const login = async (req, res) => {
   const { username, password } = req.body;
-  const founded = await Prisma.utenti.findMany({
+  console.log(username, password);
+  const user = await Prisma.utenti.findMany({
     select: {
       Id: true,
     },
@@ -14,12 +15,13 @@ const login = async (req, res) => {
     },
   });
 
-  console.log(founded);
+  console.log(user);
 
-  if (founded.length != 0) {
-    res.sendFile("/client/views/myaccount.html");
+  if (user) {
+    res.writeHead(200);
+    res.end("login eseguito");
   } else {
-    res.write("credenziali sbagliate");
+    res.end("credenziali sbagliate");
     console.log("no");
   }
 };
