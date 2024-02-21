@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 const authRouter = require("./server/routes/authRoutes.js");
-const weatherData = require("./server/api/meteo.js");
+//const weatherData = require("./server/api/meteo.js");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

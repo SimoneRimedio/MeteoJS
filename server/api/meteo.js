@@ -1,4 +1,4 @@
-const { fetchWeatherApi } = require('openmeteo');
+/*const { fetchWeatherApi } = require('openmeteo');
 
 const params = {
     "latitude": 52.52,
@@ -43,4 +43,4 @@ for (let i = 0; i < weatherData.hourly.time.length; i++) {
     );
 }
 
-module.exports = weatherData;
+module.exports = weatherData;*/
